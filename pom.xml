@@ -24,7 +24,7 @@
 		<!-- BOMS -->
 		<javax-javaee-bom.version>7.0a</javax-javaee-bom.version>
 		<payara-bom.version>4.1.2-2</payara-bom.version>
-		<java-commons.version>1.1</java-commons.version>
+		<java-commons.version>1.2-SNAPSHOT</java-commons.version>
 		<!-- tech -->
 		<patterns-dao.version>1.1</patterns-dao.version>
 		<lapsa-arquillian-test.version>1.1</lapsa-arquillian-test.version>
