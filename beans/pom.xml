@@ -31,18 +31,11 @@
 			<artifactId>lapsa-arquillian-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- own -->
 		<dependency>
-			<groupId>${project.groupId}</groupId>
+			<groupId>tech.lapsa.epayment</groupId>
 			<artifactId>epayment-dao-client</artifactId>
 			<scope>compile</scope>
 			<optional>false</optional>
-			<exclusions>
-				<exclusion>
-					<groupId>tech.lapsa.epayment</groupId>
-					<artifactId>epayment-qazkom-commons</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<!-- Payara -->
 		<dependency>
@@ -67,11 +60,6 @@
 			<scope>provided</scope>
 		</dependency>
 		<!-- test -->
-		<dependency>
-			<groupId>tech.lapsa.epayment</groupId>
-			<artifactId>epayment-qazkom-commons</artifactId>
-			<scope>test</scope>
-		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
