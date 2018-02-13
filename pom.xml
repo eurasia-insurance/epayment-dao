@@ -26,9 +26,8 @@
 		<java-commons.version>1.2</java-commons.version>
 		<!-- tech -->
 		<patterns-dao.version>1.2</patterns-dao.version>
-		<epayment-dao-client.version>1.2</epayment-dao-client.version>
+		<epayment-dao-client.version>1.2.1-SNAPSHOT</epayment-dao-client.version>
 		<lapsa-arquillian-test.version>1.1</lapsa-arquillian-test.version>
-		<epayment-domain.version>4.0</epayment-domain.version>
 	</properties>
 
 	<dependencyManagement>
