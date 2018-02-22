@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Insurance DAO</title>
+</h:head>
+<h:body>
+
+	<h1>#{config.appName} / #{config.appVersion}</h1>
+
+	<hr />
+
+	<h:form>
+		<h:commandButton value="Flush and clear persistence context"
+			action="#{control.doFlushAndClear}" />
+		<br />
+		<h:commandButton value="Ping database"
+			action="#{control.doPing}" />
+	</h:form>
+</h:body>
+</html>

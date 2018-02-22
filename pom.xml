@@ -16,6 +16,7 @@
 
 	<modules>
 		<module>beans</module>
+		<module>webapp</module>
 		<module>app</module>
 	</modules>
 
@@ -78,6 +79,12 @@
 				<artifactId>epayment-dao</artifactId>
 				<version>${project.version}</version>
 				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>epayment-dao-webapp</artifactId>
+				<version>${project.version}</version>
+				<type>war</type>
 			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
