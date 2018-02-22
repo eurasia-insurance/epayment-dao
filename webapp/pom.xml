@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tech.lapsa.epayment</groupId>
+		<artifactId>epayment-dao-root</artifactId>
+		<version>1.2.2-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>epayment-dao-webapp</artifactId>
+	<packaging>war</packaging>
+
+	<name>Epayment Lib : DAO : Webapp</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>tech.lapsa.epayment</groupId>
+			<artifactId>epayment-dao-client</artifactId>
+			<scope>compile</scope>
+			<optional>false</optional>
+		</dependency>
+		<dependency>
+			<groupId>tech.lapsa.epayment</groupId>
+			<artifactId>epayment-dao</artifactId>
+			<type>ejb</type>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JavaEE -->
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.ejb</groupId>
+			<artifactId>javax.ejb-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/version.properties</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/version.properties</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
+
+</project>
