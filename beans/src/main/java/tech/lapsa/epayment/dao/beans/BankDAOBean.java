@@ -8,16 +8,16 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import tech.lapsa.epayment.dao.BankDAO;
 import tech.lapsa.epayment.dao.BankDAO.BankDAOLocal;
 import tech.lapsa.epayment.dao.BankDAO.BankDAORemote;
-import tech.lapsa.epayment.dao.QazkomPaymentDAO;
 import tech.lapsa.epayment.domain.Bank;
 import tech.lapsa.epayment.domain.Bank_;
 import tech.lapsa.java.commons.exceptions.IllegalArgument;
 import tech.lapsa.java.commons.function.MyStrings;
 import tech.lapsa.patterns.dao.NotFound;
 
-@Stateless(name = QazkomPaymentDAO.BEAN_NAME)
+@Stateless(name = BankDAO.BEAN_NAME)
 public class BankDAOBean extends ABaseDAO<Bank, Integer>
 	implements BankDAOLocal, BankDAORemote {
 
