@@ -107,9 +107,9 @@
 	</dependencyManagement>
 
 	<scm>
-		<connection>scm:git:https://gitlab.lapsa.tech/lapsa/epayment/dao.git</connection>
-		<developerConnection>scm:git:https://gitlab.lapsa.tech/lapsa/epayment/dao.git</developerConnection>
-		<tag>v1.2.4</tag>
+		<connection>scm:git:https://github.com/eurasia-insurance/epayment-dao.git</connection>
+		<developerConnection>scm:git:https://github.com/eurasia-insurance/epayment-dao.git</developerConnection>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
