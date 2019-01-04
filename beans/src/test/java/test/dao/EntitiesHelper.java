@@ -34,7 +34,7 @@ public final class EntitiesHelper {
     private static PrivateKey merchantKey;
 
     static {
-	final InputStream storeStream = MyResources.optionalAsStream(EntitiesHelper.class, KEYSTORE) //
+	final InputStream storeStream = MyResources.optAsStream(EntitiesHelper.class, KEYSTORE) //
 		.orElseThrow(() -> new RuntimeException("Keystore not found"));
 
 	final KeyStore keystore = MyKeyStores.from(storeStream, STORETYPE, STOREPASS) //
