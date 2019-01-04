@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import tech.lapsa.epayment.dao.beans.EntityManagerControlBean;
+import tech.lapsa.java.commons.exceptions.IllegalState;
 
 @Named("control")
 @RequestScoped
@@ -24,7 +25,7 @@ public class ControlCDIBean implements Serializable {
 	return "home";
     }
 
-    public String doPing() {
+    public String doPing() throws IllegalState {
 	bean.ping();
 	return "home";
     }

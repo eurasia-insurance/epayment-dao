@@ -1,18 +1,16 @@
 package tech.lapsa.epayment.dao.beans;
 
-import java.util.Map;
-
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
-import javax.persistence.CacheRetrieveMode;
-import javax.persistence.CacheStoreMode;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import tech.lapsa.epayment.jpa.EpaymentConstants;
 import tech.lapsa.epayment.jpa.EpaymentVersion;
-import tech.lapsa.java.commons.function.MyMaps;
+import tech.lapsa.java.commons.exceptions.IllegalState;
+import tech.lapsa.java.commons.function.MyExceptions;
+import tech.lapsa.javax.jpa.commons.JPAConstants;
 
 @Stateless
 public class EntityManagerControlBean {
@@ -26,16 +24,13 @@ public class EntityManagerControlBean {
 	em.getEntityManagerFactory().getCache().evictAll();
     }
 
-    // TODO REFACT Use constants from jpa-commons/tech.lapsa.javax.jpa.commons.JPAConstants
-    private static final String HINT_JAVAX_PERSISTENCE_CACHE_STORE_MODE = "javax.persistence.cache.storeMode";
-    private static final String HINT_JAVAX_PERSISTENCE_CACHE_RETREIVE_MODE = "javax.persistence.cache.retreiveMode";
-
-    private static final Map<String, Object> NO_CACHE_PROPS = MyMaps.of( //
-	    HINT_JAVAX_PERSISTENCE_CACHE_RETREIVE_MODE, CacheRetrieveMode.BYPASS, //
-	    HINT_JAVAX_PERSISTENCE_CACHE_STORE_MODE, CacheStoreMode.REFRESH);
-
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public void ping() {
-	em.find(EpaymentVersion.class, 1, NO_CACHE_PROPS);
+    public void ping() throws IllegalState {
+	try {
+	    em.find(EpaymentVersion.class, 1, JPAConstants.NO_CACHE_PROPERTIES);
+	} catch (RuntimeException e) {
+	    throw MyExceptions.format(IllegalState::new,
+		    "Illegal stae of persistence layer. %1$s throwed with message %2$s", e.getClass(), e.getMessage());
+	}
     }
 }
